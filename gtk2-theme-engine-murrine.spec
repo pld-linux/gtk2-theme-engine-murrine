@@ -52,6 +52,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS README
+%doc AUTHORS CREDITS ChangeLog
 %attr(755,root,root) %{_libdir}/gtk-2.0/*/engines/*.so
 %{_datadir}/themes/*
