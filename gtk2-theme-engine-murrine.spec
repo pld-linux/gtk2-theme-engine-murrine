@@ -6,6 +6,8 @@ License:	GPL
 Group:		Themes/GTK+
 Source0:	http://cimi.netsons.org/media/download_gallery/murrine/murrine-%{version}.tar.bz2
 # Source0-md5:	a114aa2f452c508b9524399ec598554f
+Source1:	http://cimi.netsons.org/media/download_gallery/MurrineThemePack.tar.bz2
+# Source1-md5:	ac4388fcd24180843a6de24db3200d9a
 URL:		http://cimi.netsons.org/pages/murrine.php
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -35,11 +37,15 @@ look like a "Murrina", which is the Italian singular of the name
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_datadir}/themes
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
 rm -f $RPM_BUILD_ROOT%{_libdir}/gtk-2.0/*/engines/*.{a,la}
+
+cd $RPM_BUILD_ROOT%{_datadir}/themes
+tar jxvf %{SOURCE1}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -48,3 +54,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS README
 %attr(755,root,root) %{_libdir}/gtk-2.0/*/engines/*.so
+%{_datadir}/themes/*
