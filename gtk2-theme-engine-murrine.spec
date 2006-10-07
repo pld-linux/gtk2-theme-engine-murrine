@@ -1,4 +1,5 @@
 Summary:	murrine theme
+Summary(pl):	Motyw murrine
 Name:		gtk2-theme-engine-murrine
 Version:	0.10
 Release:	1
@@ -33,7 +34,7 @@ Source12:	http://www.gnome-look.org/content/files/44430-MurrinaLoveGray.tar.bz2
 URL:		http://cimi.netsons.org/pages/murrine.php
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gtk+2-devel
+BuildRequires:	gtk+2-devel >= 2.0
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -45,6 +46,12 @@ Murrine has this object to provide the ability to make your desktop
 look like a "Murrina", which is the Italian singular of the name
 "Murrine".
 
+%description -l pl
+"Murrine" to w³oskie s³owo oznaczaj±ce szklane dzie³a wykonywane
+przez wenecjañskich dmuchaczy szk³a. S± absolutnie cudowne i kolorowe.
+Murrine zawiera ten obiekt, co pozwala uczyniæ pulpit wygl±daj±cym jak
+"Murrina" (liczba pojedyncza od nazwy "Murrine").
+
 %prep
 %setup -q -n murrine-%{version}
 
@@ -54,6 +61,7 @@ look like a "Murrina", which is the Italian singular of the name
 %{__autoconf}
 %{__automake}
 %configure \
+	--disable-static \
 	--enable-animation
 %{__make}
 
@@ -64,7 +72,7 @@ install -d $RPM_BUILD_ROOT%{_datadir}/themes
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -f $RPM_BUILD_ROOT%{_libdir}/gtk-2.0/*/engines/*.{a,la}
+rm -f $RPM_BUILD_ROOT%{_libdir}/gtk-2.0/*/engines/*.la
 
 cd $RPM_BUILD_ROOT%{_datadir}/themes
 tar jxvf %{SOURCE1}
