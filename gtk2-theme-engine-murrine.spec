@@ -1,5 +1,5 @@
 Summary:	murrine theme
-Summary(pl):	Motyw murrine
+Summary(pl.UTF-8):   Motyw murrine
 Name:		gtk2-theme-engine-murrine
 Version:	0.30.2
 Release:	1
@@ -36,10 +36,10 @@ Murrine has this object to provide the ability to make your desktop
 look like a "Murrina", which is the Italian singular of the name
 "Murrine".
 
-%description -l pl
-"Murrine" to w³oskie s³owo oznaczaj±ce szklane dzie³a wykonywane
-przez wenecjañskich dmuchaczy szk³a. S± absolutnie cudowne i kolorowe.
-Murrine zawiera ten obiekt, co pozwala uczyniæ pulpit wygl±daj±cym jak
+%description -l pl.UTF-8
+"Murrine" to wÅ‚oskie sÅ‚owo oznaczajÄ…ce szklane dzieÅ‚a wykonywane
+przez wenecjaÅ„skich dmuchaczy szkÅ‚a. SÄ… absolutnie cudowne i kolorowe.
+Murrine zawiera ten obiekt, co pozwala uczyniÄ‡ pulpit wyglÄ…dajÄ…cym jak
 "Murrina" (liczba pojedyncza od nazwy "Murrine").
 
 %prep
