@@ -1,5 +1,5 @@
 Summary:	murrine theme
-Summary(pl.UTF-8):   Motyw murrine
+Summary(pl.UTF-8):	Motyw murrine
 Name:		gtk2-theme-engine-murrine
 Version:	0.30.2
 Release:	1
