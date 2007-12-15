@@ -1,14 +1,14 @@
 Summary:	murrine theme
 Summary(pl.UTF-8):	Motyw murrine
 Name:		gtk2-theme-engine-murrine
-Version:	0.30.2
+Version:	0.53.1
 Release:	1
 License:	GPL
 Group:		Themes/GTK+
 Source0:	http://cimi.netsons.org/media/download_gallery/murrine/murrine-%{version}.tar.bz2
-# Source0-md5:	e3a2113cf9f4225d56ca3980c1405269
+# Source0-md5:	09f014584ae593b9795f3f6db26005d8
 Source1:	http://cimi.netsons.org/media/download_gallery/MurrineThemePack.tar.bz2
-# Source1-md5:	a3aa158efd37c823c46ef5a68325ab5e
+# Source1-md5:	414013c22d1fb3954a5c3d09499c80b2
 Source2:	http://cimi.netsons.org/media/download_gallery/MurrinaLoveGray.tar.bz2
 # Source2-md5:	31ce9fce5114c1cfe471dc614de539cc
 Source3:	http://cimi.netsons.org/media/download_gallery/MurrinaGilouche.tar.bz2
@@ -19,9 +19,9 @@ Source5:	http://cimi.netsons.org/media/download_gallery/MurrinaVerdeOlivo.tar.bz
 # Source5-md5:	7fb55d613c31a1455a9db6c121fff0bb
 Source6:	http://cimi.netsons.org/media/download_gallery/MurrinaFancyCandy.tar.bz2
 # Source6-md5:	5a66f3de41547a0a27f925ac8d8d8c46
-Source7:	http://www.kernow-webhosting.com/~bvc/theme/gtk/murrine/murrina-all.tar.gz
+Source7:	murrina-all.tar.gz
 # Source7-md5:	48dc71a8f627662864e9cccdca8b5391
-URL:		http://cimi.netsons.org/pages/murrine.php
+URL:		http://murrine.netsons.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gtk+2-devel >= 2.0
