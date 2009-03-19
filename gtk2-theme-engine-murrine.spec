@@ -1,12 +1,12 @@
 Summary:	murrine theme
 Summary(pl.UTF-8):	Motyw murrine
 Name:		gtk2-theme-engine-murrine
-Version:	0.53.1
+Version:	0.90.2
 Release:	1
 License:	GPL
 Group:		Themes/GTK+
-Source0:	http://cimi.netsons.org/media/download_gallery/murrine/murrine-%{version}.tar.bz2
-# Source0-md5:	09f014584ae593b9795f3f6db26005d8
+Source0:	http://download.gnome.org/sources/murrine/0.90/murrine-%{version}.tar.bz2
+# Source0-md5:	d9fc5cba4ebd349c0629f67826ec2063
 Source1:	http://cimi.netsons.org/media/download_gallery/MurrineThemePack.tar.bz2
 # Source1-md5:	414013c22d1fb3954a5c3d09499c80b2
 Source2:	http://cimi.netsons.org/media/download_gallery/MurrinaLoveGray.tar.bz2
@@ -19,8 +19,6 @@ Source5:	http://cimi.netsons.org/media/download_gallery/MurrinaVerdeOlivo.tar.bz
 # Source5-md5:	7fb55d613c31a1455a9db6c121fff0bb
 Source6:	http://cimi.netsons.org/media/download_gallery/MurrinaFancyCandy.tar.bz2
 # Source6-md5:	5a66f3de41547a0a27f925ac8d8d8c46
-Source7:	murrina-all.tar.gz
-# Source7-md5:	48dc71a8f627662864e9cccdca8b5391
 URL:		http://murrine.netsons.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -71,7 +69,6 @@ tar jxvf %{SOURCE3}
 tar jxvf %{SOURCE4}
 tar jxvf %{SOURCE5}
 tar jxvf %{SOURCE6}
-tar zxvf %{SOURCE7}
 
 find . -name '*~' -exec rm {} \;
 
@@ -83,6 +80,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS CREDITS ChangeLog
+%doc AUTHORS ChangeLog
 %attr(755,root,root) %{_libdir}/gtk-2.0/*/engines/*.so
+%{_datadir}/gtk-engines/murrine.xml
 %{_datadir}/themes/*
