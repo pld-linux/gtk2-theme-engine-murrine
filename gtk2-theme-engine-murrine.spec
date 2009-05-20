@@ -1,12 +1,12 @@
 Summary:	murrine theme
 Summary(pl.UTF-8):	Motyw murrine
 Name:		gtk2-theme-engine-murrine
-Version:	0.90.2
+Version:	0.90.3
 Release:	1
 License:	GPL
 Group:		Themes/GTK+
 Source0:	http://download.gnome.org/sources/murrine/0.90/murrine-%{version}.tar.bz2
-# Source0-md5:	d9fc5cba4ebd349c0629f67826ec2063
+# Source0-md5:	58a10b5c7b5e114a8a7ff5705fe274f5
 Source1:	http://cimi.netsons.org/media/download_gallery/MurrineThemePack.tar.bz2
 # Source1-md5:	414013c22d1fb3954a5c3d09499c80b2
 Source2:	http://cimi.netsons.org/media/download_gallery/MurrinaLoveGray.tar.bz2
