@@ -55,6 +55,7 @@ Murrine zawiera ten obiekt, co pozwala uczynić pulpit wyglądającym jak
 %{__autoconf}
 %{__automake}
 %configure \
+	--disable-silent-rules \
 	--disable-static \
 	--enable-animation \
 	--enable-animationrtl
@@ -87,4 +88,23 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog
 %attr(755,root,root) %{_libdir}/gtk-2.0/*/engines/*.so
 %{_datadir}/gtk-engines/murrine.xml
-%{_datadir}/themes/*
+%dir %{_datadir}/themes
+%{_datadir}/themes/MurrinaAquaIsh
+%{_datadir}/themes/MurrinaCandy
+%{_datadir}/themes/MurrinaCappuccino
+%{_datadir}/themes/MurrinaEalm
+%{_datadir}/themes/MurrinaFancyCandy
+%{_datadir}/themes/MurrinaGilouche
+%{_datadir}/themes/MurrinaLoveGray
+%{_datadir}/themes/MurrinaNeoGraphite
+%{_datadir}/themes/MurrinaVerdeOlivo
+
+# from murrina-all.tar
+%{_datadir}/themes/MurrinaStyle
+%{_datadir}/themes/Murrina-Aqua
+%{_datadir}/themes/Murrina-Blu
+%{_datadir}/themes/Murrina-Graphite
+%{_datadir}/themes/Murrina-Green
+%{_datadir}/themes/Murrina-Olive
+%{_datadir}/themes/Murrina-Pink
+%{_datadir}/themes/Murrina-Purple
