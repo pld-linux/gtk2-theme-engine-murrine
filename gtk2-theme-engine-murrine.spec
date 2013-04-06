@@ -1,13 +1,12 @@
-%define majorver 0.90
-Summary:	murrine theme
+Summary:	Murrine GTK2 engine
 Summary(pl.UTF-8):	Motyw murrine
 Name:		gtk2-theme-engine-murrine
-Version:	%{majorver}.3
+Version:	0.98.2
 Release:	1
-License:	GPL
+License:	LGPL v2 or LGPL v3
 Group:		Themes/GTK+
-Source0:	http://ftp.acc.umu.se/pub/GNOME/sources/murrine/%{majorver}/murrine-%{version}.tar.bz2
-# Source0-md5:	58a10b5c7b5e114a8a7ff5705fe274f5
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/murrine/0.98/murrine-%{version}.tar.xz
+# Source0-md5:	bf01e0097b5f1e164dbcf807f4b9745e
 Source1:	http://cimi.netsons.org/media/download_gallery/MurrineThemePack.tar.bz2
 # Source1-md5:	414013c22d1fb3954a5c3d09499c80b2
 Source2:	http://cimi.netsons.org/media/download_gallery/MurrinaLoveGray.tar.bz2
@@ -22,12 +21,14 @@ Source6:	http://cimi.netsons.org/media/download_gallery/MurrinaFancyCandy.tar.bz
 # Source6-md5:	5a66f3de41547a0a27f925ac8d8d8c46
 Source7:	murrina-all.tar.gz
 # Source7-md5:	48dc71a8f627662864e9cccdca8b5391
-URL:		http://www.cimitan.com/murrine/
+URL:		https://launchpad.net/murrine
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gtk+2-devel >= 2.0
+BuildRequires:	intltool
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
+BuildRequires:	sed >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -46,6 +47,8 @@ Murrine zawiera ten obiekt, co pozwala uczynić pulpit wyglądającym jak
 %prep
 %setup -q -n murrine-%{version}
 
+%{__sed} -i -e 's,AM_CONFIG_HEADER,AC_CONFIG_HEADERS,' configure.ac
+
 %build
 %{__libtoolize}
 %{__aclocal}
@@ -53,31 +56,28 @@ Murrine zawiera ten obiekt, co pozwala uczynić pulpit wyglądającym jak
 %{__automake}
 %configure \
 	--disable-static \
-	--enable-animation
+	--enable-animation \
+	--enable-animationrtl
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_datadir}/themes
-
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -f $RPM_BUILD_ROOT%{_libdir}/gtk-2.0/*/engines/*.la
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/gtk-2.0/*/engines/*.la
 
 cd $RPM_BUILD_ROOT%{_datadir}/themes
-tar jxvf %{SOURCE1}
-tar jxvf %{SOURCE2}
-tar jxvf %{SOURCE3}
-tar jxvf %{SOURCE4}
-tar jxvf %{SOURCE5}
-tar jxvf %{SOURCE6}
-tar zxvf %{SOURCE7}
+tar jxf %{SOURCE1}
+tar jxf %{SOURCE2}
+tar jxf %{SOURCE3}
+tar jxf %{SOURCE4}
+tar jxf %{SOURCE5}
+tar jxf %{SOURCE6}
+tar zxf %{SOURCE7}
 
-find . -name '*~' -exec rm {} \;
-
-# update old themes for new engine
-find . -name 'gtkrc' -exec sed -i -e 's/squaredstyle/roundness/g' {} \;
+find -name '*~' -print -delete
 
 %clean
 rm -rf $RPM_BUILD_ROOT
