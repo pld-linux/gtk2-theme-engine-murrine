@@ -2,7 +2,7 @@ Summary:	Murrine GTK2 engine
 Summary(pl.UTF-8):	Motyw murrine
 Name:		gtk2-theme-engine-murrine
 Version:	0.98.2
-Release:	1
+Release:	2
 License:	LGPL v2 or LGPL v3
 Group:		Themes/GTK+
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/murrine/0.98/murrine-%{version}.tar.xz
